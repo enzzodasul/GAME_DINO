@@ -23,5 +23,18 @@
     animation: slideright 600s infinite linear;
     /*renderização para chrome e safari*/
     -webkit-animation: slideright 600s infinite linear;
+    /*largura do chão*/
     width: 400%;
+    /*altura do chão*/
+    height: 200px;
+} 
+
+/* slider de movimento do chão*/
+@keyframes slideright {
+    from{
+    background-position: 70000%
+}
+to {
+  background-position: 0%;
+}
 }
