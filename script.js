@@ -11,6 +11,65 @@ document.addEventListener('DOMContentLoaded',() => {
     let gameo = false
     let dinopy = 0
 
+//Entrada de dados
+document.addEventListener('keyup',jumpcontrol)
+
+    //controle de pulo
+    function jumpcontrol(e){
+        if(e.keyCode == 32){
+            if(!jumping){
+                jumping= true
+                jump()
+            }
+        }
+    }
+
+    function jump(){
+        let count = 0
+        let timerId = setInterval(function(){
+            //caindo
+            if(count == 15){
+                clearInterval(timerId)
+                let downTimerId = setInterval(function(){
+                    if(count == 0){
+                        clearInterval(downTimerId)
+                        jumping = false
+                    }
+                    dinopy -= 5
+                    count --
+                    dinopy = dinopy * gravity
+                    dino.style.bottom = dinopy + 'px'
+                },20)
+
+            
+            }
+
+            //subida
+            dinopy +=30
+            count++
+            dinopy = dinopy * gravity
+            dino.style.bottom = dinopy + 'px'
+        },20)
+    }
+
+    function gerarobst(){
+        let random = Math.random()*4000
+        let obstaclepx = 1000
+        const obstacle = document.createElement('div')
+
+        //criando copias
+        if(!gameo) obstacle.classList.add('obstacle')
+            grid.appendChild(obstacle)
+        obstacle.style.left = obstaclepx + 'px'
+
+        //logica do jogo + movimento dos obstaculos
+        let timerId = setInterval(function(){
+            obstaclepx -= 10
+            obstacle.style.left = obstaclepx = 'px'
+        },20)
+
+
+    }
 
 })
 
