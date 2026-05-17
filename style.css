@@ -38,3 +38,12 @@ to {
   background-position: 0%;
 }
 }
+
+@-webkit-keyframes slideright {
+    from {
+        background-position: 70000%;
+    }
+    to{
+        background-position: 0%;
+    }
+}
