@@ -1,0 +1,27 @@
+.dino {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('dino.png');
+    bottom: 0px;
+}
+
+.obstacle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('cactus.png');
+    bottom: 0px;
+}
+
+#desert {
+    position: absolute;
+    bottom:0px;
+    background-image: url('bg.png');
+    background-repeat: repeat-x;
+    /*velocidade que o chão se move*/
+    animation: slideright 600s infinite linear;
+    /*renderização para chrome e safari*/
+    -webkit-animation: slideright 600s infinite linear;
+    width: 400%;
+}
